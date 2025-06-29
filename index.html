@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anggazy Market</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #000;
+    }
+    header {
+      background: #00aaff;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .admin-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border: 3px solid #a200ff;
+      border-radius: 20px;
+      padding: 10px;
+      margin: 20px;
+    }
+    .admin-section img {
+      width: 80px;
+      border-radius: 50%;
+    }
+    .admin-info {
+      text-align: center;
+    }
+    .admin-info p {
+      margin: 5px 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .admin-info a {
+      display: inline-block;
+      background: black;
+      color: #00aaff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 20px;
+      text-align: center;
+    }
+    .menu-item {
+      border: 2px solid #a200ff;
+      border-radius: 20px;
+      padding: 15px;
+      text-decoration: none;
+      color: #000;
+      transition: transform 0.2s;
+    }
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+    .menu-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .menu-item span {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .menu {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>ANGGAZY.MARKET.ID</header>
+
+<div class="admin-section">
+  <img src="admin-kiri.png" alt="Admin Left">
+  <div class="admin-info">
+    <p>NOMOR ADMIN :</p>
+    <a href="https://wa.me/6285946182055" target="_blank">KLIK DI SINI</a>
+  </div>
+  <img src="admin-kanan.png" alt="Admin Right">
+</div>
+
+<div class="menu">
+  <a href="akun.html" class="menu-item">
+    <img src="akun-game.png" alt="Akun Game">
+    <span>AKUN GAME</span>
+  </a>
+  <a href="panel.html" class="menu-item">
+    <img src="panel-bot.png" alt="Panel Bot">
+    <span>PANEL BOT</span>
+  </a>
+  <a href="murid.html" class="menu-item">
+    <img src="murid.png" alt="Join Murid">
+    <span>JOIN MURID</span>
+  </a>
+  <a href="sewa.html" class="menu-item">
+    <img src="bot.png" alt="Sewa Bot WA">
+    <span>SEWA BOT WA</span>
+  </a>
+  <a href="jasa.html" class="menu-item">
+    <img src="jasa.png" alt="Jasa">
+    <span>JASA</span>
+  </a>
+  <a href="script.html" class="menu-item">
+    <img src="script.png" alt="Script Bot">
+    <span>SCRIPT BOT</span>
+  </a>
+  <a href="unchek.html" class="menu-item">
+    <img src="unchek.png" alt="Script Bot">
+    <span>UNCHEK</span>
+</div>
+</body>
+</html>

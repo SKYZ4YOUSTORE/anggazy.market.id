@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FORMAT PEMESANAN PANEL</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0072ff;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-bottom: 10px;
+      transition: 0.2s;
+    }
+
+    select:focus {
+      border-color: #0072ff;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #0072ff;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #005cd1;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>FORMAT PEMESANAN UNCHEK</h2>
+    <form id="orderForm">
+      <label for="ram">Pilih JUMLAH UNCHEK:</label>
+      <select id="ram" required>
+        <option value="">-- JUMLAH UNCHEK --</option>
+        <option>15 UNCHEK [5K]</option>
+        <option>25 UNCHEK [10K]</option>
+        <option>50 UNCHEK [15K]</option>
+        <option>60 UNCHEK [20K]</option>
+        <option>75 UNCHEK [30K]</option>
+        <option>90 UNCHEK [45K]</option>
+        <option>100 UNCHEK [50K]</option>
+        <option>120 UNCHEK [65K]</option>
+        <option>150 UNCHEK [70K]</option>
+        <option>TEAM RESS [ 15K ]</option>
+      </select>
+
+      <label for="payment">Metode Pembayaran:</label>
+      <select id="payment" required>
+        <option value="">-- Pilih Pembayaran --</option>
+        <option>DANA</option>
+        <option>OVO</option>
+        <option>GOPAY</option>
+        <option>QRIS</option>
+      </select>
+
+      <button type="submit">Pesan Sekarang</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    &copy; Crate By Anggazy.market.id
+  </div>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const ram = document.getElementById("ram").value;
+      const payment = document.getElementById("payment").value;
+
+      if (!ram || !payment) {
+        alert("Mohon pilih JUMLAH UNCHEK dan metode pembayaran.");
+        return;
+      }
+
+      const pesan = `*Format Pemesanan Unchek Premium*\n\nJUMLAH UNCHEK : ${ram}\nMETODE PEMBAYARAN : ${payment}\n\nMohon segera diproses ya kak 🙏`;
+      const nomorWA = "6285946182055";
+      const urlWA = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+      window.open(urlWA, '_blank');
+    });
+  </script>
+
+</body>
+</html>

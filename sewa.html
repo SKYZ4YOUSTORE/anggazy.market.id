@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FORMAT PEMESANAN PANEL</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0072ff;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-bottom: 10px;
+      transition: 0.2s;
+    }
+
+    select:focus {
+      border-color: #0072ff;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #0072ff;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #005cd1;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Format Sewa Bot Wa</h2>
+    <form id="orderForm">
+      <label for="ram">Pilih Jangka hari:</label>
+      <select id="ram" required>
+        <option value="">-- Pilih Jangka hari --</option>
+        <option>1 HARI [2K]</option>
+        <option>2 HARI [4K]</option>
+        <option>3 HARI [8K]</option>
+        <option>1 HARI [10K]</option>
+        <option>1 HARI [12K]</option>
+        <option>1 HARI [14K]</option>
+        <option>1 HARI [16K]</option>
+        <option>1 HARI [18K]</option>
+        <option>1 HARI [20K]</option>
+        <option>PERMANENT [7K]</option>
+      </select>
+
+      <label for="payment">Metode Pembayaran:</label>
+      <select id="payment" required>
+        <option value="">-- Pilih Pembayaran --</option>
+        <option>DANA</option>
+        <option>OVO</option>
+        <option>GOPAY</option>
+        <option>QRIS</option>
+      </select>
+
+      <button type="submit">Pesan Sekarang</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    &copy; Crate By Anggazy.market.id
+  </div>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const ram = document.getElementById("ram").value;
+      const payment = document.getElementById("payment").value;
+
+      if (!ram || !payment) {
+        alert("Mohon pilih jumlah hari dan metode pembayaran.");
+        return;
+      }
+
+      const pesan = `*Format Pemesanan Sewa bot*\n\nJangka Hari: ${ram}\nPembayaran: ${payment}\n\nMohon segera diproses ya kak 🙏`;
+      const nomorWA = "6285946182055";
+      const urlWA = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+      window.open(urlWA, '_blank');
+    });
+  </script>
+
+</body>
+</html>
